@@ -2,9 +2,11 @@ import { Button } from "@mui/material"
 import { auth, provider } from "./firebase"
 import { actionTypes } from "./reducer"
 import { useStateValue } from "./StateProvider"
+import { useNavigate } from "react-router-dom"
 export const Login = () => {
 
     const [{ }, dispatch] = useStateValue()
+    let  navigate = useNavigate()
 
     const signIn = () => {
         auth
@@ -18,6 +20,7 @@ export const Login = () => {
                     user: result.user
 
                 })
+                navigate("../rooms/50OkbmJUkuWtIH2KJTiA", { replace: true });
             })
             .catch(err => alert(err.message))
     }

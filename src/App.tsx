@@ -16,7 +16,7 @@ function App() {
         <div className="app__body">
           <Sidebar />
           <Routes>
-            <Route path='/' element={<h1>Home Page</h1>} />
+            {/* <Route path='/rooms/50OkbmJUkuWtIH2KJTiA' element={<h1>Home Page</h1>} /> */}
 
             <Route path='/rooms/:roomId' element={<Chat />} />
 
