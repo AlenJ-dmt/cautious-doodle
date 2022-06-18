@@ -26,7 +26,6 @@ export const Chat = () => {
             })
         }
 
-        console.log("update")
         if (messages.length !== messagesLength) {
             let x = document.getElementById("chat-body")
             x?.scrollTo(0, 1000)
@@ -43,8 +42,7 @@ export const Chat = () => {
     const [input, setInput] = useState<string | undefined>("")
 
     useEffect(() => {
-        console.log(messages)
-        x?.scrollTo(0, 1000)
+        x?.scrollTo(0, 1000 * messages.length)
     }, [messages])
     const sendMessage = (ev: any) => {
         ev.preventDefault()
@@ -53,8 +51,7 @@ export const Chat = () => {
             name: localStorage.getItem("USER_NAME"),
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
-        console.log(x)
-        x?.scrollTo(0, 1000)
+        x?.scrollTo(0, -1000)
         setInput("")
     }
 

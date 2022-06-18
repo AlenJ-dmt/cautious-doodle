@@ -12,7 +12,6 @@ export const Login = () => {
         auth
             .signInWithPopup(provider)
             .then(result => {
-                console.log(result.additionalUserInfo?.profile!.id)
                 localStorage.setItem("USER_ID", result.additionalUserInfo?.profile!.id)
                 localStorage.setItem("USER_NAME", result.additionalUserInfo?.profile!.name)
                 dispatch({

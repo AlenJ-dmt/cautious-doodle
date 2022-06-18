@@ -2,7 +2,7 @@
   display: grid;
   place-items: center;
   height: 100vh;
-  background-color: bisque;
+  background-color: #121212;
 }
 .app__body{
   display: flex;
