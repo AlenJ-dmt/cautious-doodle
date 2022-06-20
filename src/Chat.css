@@ -46,19 +46,39 @@
   background-position: center;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 
   overflow: scroll;
   overflow-x: hidden;
+}
+
+.chat__with__image{
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  position: relative;
+  font-size: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  overflow-wrap: break-word;
+  max-width: 30vw;
+  background-color: #1e1e1f;
+}
+.chat__with__image > img {
+  border-radius: 10px;
+  margin: 0 auto;
 }
 .chat__message {
   position: relative;
   font-size: 20px;
   padding: 10px;
   padding-bottom: 20px;
-  background-color: #3a3b3c;
+  background-color: #1e1e1f;
   border-radius: 10px;
-  /* width: calc(fit-content + 70px); */
   margin-bottom: 20px;
   max-width: 70vw;
   overflow-wrap: break-word;
@@ -78,29 +98,33 @@
   /* margin-left: 10px; */
   font-size: xx-small;
   display: inline-block;
-  width: 65px;
+  min-width: 70px;
   position: absolute;
   bottom: 5px;
   right: 0;
   color: white;
   letter-spacing: 0.5px;
+  width: fit-content;
 }
 
 .chat__reciever {
   margin-left: auto;
-  background-color: #3880f5;
+  background-color: #1c222d;
 }
 
 .chat__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  min-height: 65px;
   border-top: 1px solid #4a4a4a;
   background-color: #212121;
   width: 100vw;
   position: fixed;
   bottom: 0;
+  height: fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .chat__footer > form {
@@ -108,27 +132,78 @@
   display: flex;
 }
 
-.chat__footer > form > input {
+.chat__footer > form > textarea {
   flex: 1;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 10px;
   border: none;
   outline: none;
   color: white;
   background-color: #282727;
   font-size: 20px !important;
+  min-height: 28px;
+  height: 28px;
 }
 
 .chat__footer > form > button {
   display: none;
 }
 
+.chat__footer > .MuiButtonBase-root {
+  color: gray;
+}
+
 .chat__footer > .MuiSvgIcon-root {
   padding: 10px;
   color: gray;
 }
+.text-with-image {
+  min-height: 130px;
+  background-color: #282727;
+  flex: 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.text-with-image > textarea {
+  flex: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #282727;
+  font-size: 20px !important;
+  overflow-wrap: break-word;
+}
+
+.image-container {
+  height: 100px;
+  position: relative;
+  width: fit-content;
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container > .MuiSvgIcon-root {
+  color: rgb(202, 73, 73);
+  position: absolute;
+  top: 3px;
+  right: 1px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 800px) {
   .chat__header {
     display: none;
+  }
+  .chat__with__image{
+    max-width: 70vw;
+   
   }
 }
